@@ -7,7 +7,7 @@
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
-            "name": "straccdevops",
+            "name": "strdevops",
             "location": "westeurope",
             "tags": {
                 "displayName": "straccdevops"
