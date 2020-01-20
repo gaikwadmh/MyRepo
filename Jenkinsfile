@@ -12,7 +12,7 @@ pipeline {
         }
 	stage('GetResource') {
             steps {
-                sh 'az resource list'
+                sh 'az vm list -g Mayur_POC'
             }
         }
     }
