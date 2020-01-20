@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Authenticate') {
             environment {
-                AZ = azureServicePrincipal('service-principle')
+                AZ = azureServicePrincipal('MSazSPN')
             }
             steps {
                 echo "principal is: ${AZ} (type: ${AZ.class.toString()})"
