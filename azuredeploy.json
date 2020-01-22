@@ -7,10 +7,10 @@
         {
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
-            "name": "strdevops",
+            "name": "jenkinstrdevops",
             "location": "westeurope",
             "tags": {
-                "displayName": "straccdevops"
+                "displayName": "jenkinstrdevops"
             },
             "sku": {
                 "name": "Standard_LRS"
