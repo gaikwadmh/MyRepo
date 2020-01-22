@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+	stage('Build') {
+            steps {
+                echo 'Running build automation'                
+                archiveArtifacts artifacts: '*'
+            }
+        }
         stage('Authenticate') {
             environment {
                 AZ = azureServicePrincipal('MSazSPN')
