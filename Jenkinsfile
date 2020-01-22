@@ -1,12 +1,6 @@
 pipeline {
     agent any
-    stages {
-	stage('Build') {
-            steps {
-                echo 'Running build automation'                
-                archiveArtifacts artifacts: '*'
-            }
-        }
+    stages {	
         stage('Authenticate') {
             environment {
                 AZ = azureServicePrincipal('MSazSPN')
@@ -18,8 +12,13 @@ pipeline {
         }
 	stage('GetResource') {
             steps {
-                sh 'az vm list -g Mayur_POC'
+                sh 'az vm list -g Mayur_DevOps'
             }
         }
+	stage('DeployStorage account'){
+		steps{
+			sh 'az group deployment create --name JenkinsDeployment --resource-group Mayur_DevOps --template-file ./azuredeploy.json'
+		}
+	} 
     }
 }
